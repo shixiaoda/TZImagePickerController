@@ -70,7 +70,7 @@ static CGSize AssetGridThumbnailSize;
     self.view.backgroundColor = [UIColor whiteColor];
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = _model.name;
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor =  [UIColor colorWithRed:(255.0/255.0) green:(255.0/255.0) blue:(254.0/255.0) alpha:1.0];
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
 //    self.navigationItem.title = _model.name;
