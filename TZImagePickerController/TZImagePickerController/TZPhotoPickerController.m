@@ -68,7 +68,12 @@ static CGSize AssetGridThumbnailSize;
     _isSelectOriginalPhoto = tzImagePickerVc.isSelectOriginalPhoto;
     _shouldScrollToBottom = YES;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = _model.name;
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = _model.name;
+    titleLabel.textColor = [UIColor whiteColor];
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+//    self.navigationItem.title = _model.name;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSBundle tz_localizedStringForKey:@"Cancel"] style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     _showTakePhotoBtn = (([[TZImageManager manager] isCameraRollAlbum:_model.name]) && tzImagePickerVc.allowTakePicture);
     if (!tzImagePickerVc.sortAscendingByModificationDate && _isFirstAppear && iOS8Later) {

@@ -30,7 +30,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    self.navigationItem.title = [NSBundle tz_localizedStringForKey:@"Preview"];
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = [NSBundle tz_localizedStringForKey:@"Preview"];
+    titleLabel.textColor = [UIColor whiteColor];
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+//    self.navigationItem.title = [NSBundle tz_localizedStringForKey:@"Preview"];
     [self configMoviePlayer];
 }
 
